@@ -9,7 +9,7 @@ import time
 #full range min_value = 700057705789562000 max_value = 1229782938247303441
 # Define the range for the random number
 min_value = 757184558208567843
-max_value = 1135776837312851832  
+max_value = 1229782938247303441  
 
 # Target address to check for a match
 target_address = "13zb1hQbWVsc2S7ZTZnP2G4undNNpdh5so"
