@@ -3,12 +3,13 @@ from bs4 import BeautifulSoup
 import random
 import time
 
-#The address 0x2fb1fce3b8dcfc000 with a 10% increase in range is 0x3476fc94182648800
-#The address 0x3141a7ecbef754000 with a 7% increase in range is 0x34b454f5a35fae800
+#The address 0x2fb1fce3b8dcfc000
+#The address 0x3141a7ecbef754000 with a 10% increase in range is 0x362e9f1e054343000
 
+#full range min_value = 700057705789562000 max_value = 1229782938247303441
 # Define the range for the random number
-min_value = 1008129773390568400
-max_value = 1041128767536780800  # Correcting the max range based on your initial input
+min_value = 916481612173244007
+max_value = 1041128767536780835  
 
 # Target address to check for a match
 target_address = "13zb1hQbWVsc2S7ZTZnP2G4undNNpdh5so"
