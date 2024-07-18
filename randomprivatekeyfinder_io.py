@@ -53,8 +53,8 @@ def fetch_data():
                 private_keys.append(private_key)
                 bitcoin_addresses.append(bitcoin_address)
 
-                print(f"Private Key: {private_key}")
-                print(f"Bitcoin Address: {bitcoin_address}")
+                #print(f"Private Key: {private_key}")
+                #print(f"Bitcoin Address: {bitcoin_address}")
 
                 # Check for a match with the specified address
                 if bitcoin_address == target_address:
@@ -64,7 +64,7 @@ def fetch_data():
                         file.write(f"Bitcoin Address: {bitcoin_address}\n")
                     return True
 
-    print("No match found.")
+    #print("No match found.")
     return False
 
 while True:
