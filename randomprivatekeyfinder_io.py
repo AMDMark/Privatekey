@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 import random
 import time
 
-#The address 0x2fb1fce3b8dcfc000
-#The address 0x362e9f1e054343000
+#The address 0x2767b98a325f76000
+#The address 0x3b1b964f4b8f32000 ​
 
 #full range min_value = 700057705789562000 max_value = 1229782938247303441
 # Define the range for the random number
