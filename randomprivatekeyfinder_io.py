@@ -2,8 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 import random
 import time
-import os
 
+#The address 0x2767b98a325f76000
+#The address 0x3b1b964f4b8f32000 ​
+
+#full range min_value = 700057705789562000 max_value = 1229782938247303441
 # Define the range for the random number
 min_value = 757184558208567843
 max_value = 1229782938247303441  
@@ -21,12 +24,10 @@ def fetch_data():
     # Construct the URL
     url = f"https://privatekeyfinder.io/private-keys/bitcoin/{random_number}"
 
-    try:
-        # Fetch the webpage
-        response = requests.get(url, timeout=10)
-        response.raise_for_status()
-    except requests.RequestException as e:
-        print(f"Failed to retrieve the page: {e}")
+    # Fetch the webpage
+    response = requests.get(url)
+    if response.status_code != 200:
+        print("Failed to retrieve the page")
         return False
 
     # Parse the webpage content
@@ -52,6 +53,9 @@ def fetch_data():
                 private_keys.append(private_key)
                 bitcoin_addresses.append(bitcoin_address)
 
+                #print(f"Private Key: {private_key}")
+                #print(f"Bitcoin Address: {bitcoin_address}")
+
                 # Check for a match with the specified address
                 if bitcoin_address == target_address:
                     print(f"Match found: {target_address}")
@@ -60,10 +64,8 @@ def fetch_data():
                         file.write(f"Bitcoin Address: {bitcoin_address}\n")
                     return True
 
+    #print("No match found.")
     return False
-
-retry_count = 0
-max_retries = 5
 
 while True:
     try:
@@ -72,11 +74,4 @@ while True:
     except Exception as e:
         print(e)
         print("Retrying...")
-        retry_count += 1
-        if retry_count >= max_retries:
-            print("Max retries reached, exiting.")
-            break
         time.sleep(1)
-
-    # Add random delay to avoid rate limiting
-    time.sleep(random.uniform(1, 5))
